@@ -1,6 +1,6 @@
-# go-fiber-clean-arch
+# go-clean
 
-Golang REST API service using Fiber framework and GORM with PostgresSQL database by applying clean architecture and dependency injection by Wire.
+Golang REST API service using Fiber framework and GORM with MySQL database by applying clean architecture and dependency injection by Wire.
 
 ## Template Structure
 
@@ -68,7 +68,7 @@ make run
 
 ### Run application with database via Docker container
 
-To use `go-fiber-clean-arch` project, follow these steps:
+To use `go-clean` project, follow these steps:
 
 ```bash
 * Update .env file for `DB_HOST` key to match with database service name in docker compse
@@ -99,35 +99,35 @@ docker-compose-run             Run docker image with postgres database in the co
 
 In the project directory, you can call:
 
-### `GET /healthcheck`
+### `GET /api`
 
 * For getting status page
 
-### `GET /login`
+### `GET /api/v1/login`
 
 * For generating a JWT
 
-### `GET /api/users`
+### `GET /api/v1/users`
 
 * For getting list of users
 
-### `GET /api/users/:id`
+### `GET /api/v1/users/:id`
 
 * For getting user by ID
 
-### `POST /api/users`
+### `POST /api/v1/users`
 
 * For creating new user
 
-### `DELETE /api/users/:id`
+### `DELETE /api/v1/users/:id`
 
 * For removing existing user
 
-### `PUT /api/users/:id`
+### `PUT /api/v1/users/:id`
 
 * For updating existing user
 
-### `GET /api/users/name/:text`
+### `GET /api/v1/users/name/:text`
 
 * For retrieving a list of user information that their
 name match or partially match with the specified text.
