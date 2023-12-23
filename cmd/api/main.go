@@ -10,12 +10,12 @@ import (
 func main() {
 	config, configErr := config.LoadConfig()
 	if configErr != nil {
-		log.Fatal("cannot load config: ", configErr)
+		log.Fatal("Gagal Load Config: ", configErr)
 	}
 
 	server, diErr := di.InitializeAPI(config)
 	if diErr != nil {
-		log.Fatal("cannot start server: ", diErr)
+		log.Fatal("Gagal Start Server: ", diErr)
 	} else {
 		server.Start()
 	}
