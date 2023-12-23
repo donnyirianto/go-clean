@@ -27,6 +27,10 @@ type Handlers struct {
 type ServerHTTP struct {
 	app *fiber.App
 }
+type welcomeMessage struct {
+	AppName string
+	Message string
+}
 
 func NewServerHTTP(middlewares *Middlewares, handlers Handlers, log log.Logger, cfg config.Config) *ServerHTTP {
 	app := fiber.New(
@@ -53,19 +57,24 @@ func NewServerHTTP(middlewares *Middlewares, handlers Handlers, log log.Logger, 
 	}
 
 	// NOTE: Healthcheck
-	app.Get("healthcheck", func(c *fiber.Ctx) error {
-		return c.SendString("OK")
+	Api := app.Group("/api")
+	Api.Get("/", func(c *fiber.Ctx) error {
+		m := welcomeMessage{"BE Clean Code", "Selamat Datang, ini adalah be go fiber clean code"}
+		return c.JSON(m)
 	})
 
-	app.Get("/login", middleware.LoginHandler)
+	ApiV1 := Api.Group("/v1")
+	// NOTE: Login route
+	ApiV1.Get("/login", middleware.LoginHandler)
 
-	userAPI := app.Group("/api", middlewares.Authentication.Authentication())
-	userAPI.Get("users", handlers.UserHandler.FindAll)
-	userAPI.Get("users/:id<minLen(1)>", handlers.UserHandler.FindByID)
-	userAPI.Post("users", handlers.UserHandler.Create)
-	userAPI.Delete("users/:id<minLen(1)>", handlers.UserHandler.Delete)
-	userAPI.Put("users/:id<minLen(1)>", handlers.UserHandler.Update)
-	userAPI.Get("users/name/:text<minLen(1)>", handlers.UserHandler.FindByMatchName)
+	// NOTE: User Api Route
+	userAPI := ApiV1.Group("/users")
+	userAPI.Get("/", handlers.UserHandler.FindAll)
+	userAPI.Get("/:id<minLen(1)>", handlers.UserHandler.FindByID)
+	userAPI.Post("/", handlers.UserHandler.Create)
+	userAPI.Delete("/:id<minLen(1)>", handlers.UserHandler.Delete)
+	userAPI.Put("/:id<minLen(1)>", handlers.UserHandler.Update)
+	userAPI.Get("/name/:text<minLen(1)>", handlers.UserHandler.FindByMatchName)
 
 	return &ServerHTTP{app}
 }
