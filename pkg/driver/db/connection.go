@@ -11,7 +11,7 @@ import (
 )
 
 func ConnectDatabase(cfg config.Config) (*gorm.DB, error) {
-	mysqlInfo := fmt.Sprintf("host=%s user=%s dbname=%s port=%s password=%s", cfg.DBHost, cfg.DBUser, cfg.DBName, cfg.DBPort, cfg.DBPassword)
+	mysqlInfo := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=latin1&parseTime=True&loc=Local", cfg.DBUser, cfg.DBPassword, cfg.DBHost, cfg.DBPort, cfg.DBName)
 	db, dbErr := gorm.Open(mysql.Open(mysqlInfo), &gorm.Config{
 		SkipDefaultTransaction: true,
 	})
