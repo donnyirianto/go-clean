@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	domain "github.com/thnkrn/go-fiber-clean-arch/pkg/domain"
+	domain "github.com/donnyirianto/go-clean/pkg/domain"
 
 	mock "github.com/stretchr/testify/mock"
 )

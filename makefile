@@ -27,7 +27,7 @@ test-coverage: ## Run tests and generate coverage file
 
 deps: ## Install dependencies
 	$(GOCMD) install github.com/google/wire/cmd/wire@latest
-	# go get $(go list -f '{{if not (or .Main .Indirect)}}{{.Path}}{{end}}' -m all)
+	
 	$(GOCMD) get -u -t -d -v ./...
 	$(GOCMD) mod tidy
 	$(GOCMD) mod vendor

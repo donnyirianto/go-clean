@@ -3,9 +3,9 @@ package di
 import (
 	"github.com/google/wire"
 
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/api/handler"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/repository"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/usecase"
+	"github.com/donnyirianto/go-clean/pkg/api/handler"
+	"github.com/donnyirianto/go-clean/pkg/repository"
+	"github.com/donnyirianto/go-clean/pkg/usecase"
 )
 
 var UserSet = wire.NewSet(

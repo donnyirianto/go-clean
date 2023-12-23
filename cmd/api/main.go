@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	config "github.com/thnkrn/go-fiber-clean-arch/pkg/config"
-	di "github.com/thnkrn/go-fiber-clean-arch/pkg/di"
+	config "github.com/donnyirianto/go-clean/pkg/config"
+	di "github.com/donnyirianto/go-clean/pkg/di"
 )
 
 func main() {

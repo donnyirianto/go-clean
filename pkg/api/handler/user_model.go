@@ -1,8 +1,8 @@
 package handler
 
 import (
+	"github.com/donnyirianto/go-clean/pkg/domain"
 	"github.com/google/uuid"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/domain"
 )
 
 type UserRequest struct {

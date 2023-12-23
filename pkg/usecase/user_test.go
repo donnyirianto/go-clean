@@ -4,13 +4,13 @@ import (
 	"context"
 	"testing"
 
+	"github.com/donnyirianto/go-clean/pkg/domain"
+	mRepository "github.com/donnyirianto/go-clean/pkg/mocks/repository"
+	usecase "github.com/donnyirianto/go-clean/pkg/usecase"
+	iUsecase "github.com/donnyirianto/go-clean/pkg/usecase/interfaces"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/domain"
-	mRepository "github.com/thnkrn/go-fiber-clean-arch/pkg/mocks/repository"
-	usecase "github.com/thnkrn/go-fiber-clean-arch/pkg/usecase"
-	iUsecase "github.com/thnkrn/go-fiber-clean-arch/pkg/usecase/interfaces"
 )
 
 type userDependencies struct {

@@ -6,9 +6,9 @@ package di
 import (
 	"github.com/google/wire"
 
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/api"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/config"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/driver/db"
+	"github.com/donnyirianto/go-clean/pkg/api"
+	"github.com/donnyirianto/go-clean/pkg/config"
+	"github.com/donnyirianto/go-clean/pkg/driver/db"
 )
 
 func InitializeAPI(cfg config.Config) (*api.ServerHTTP, error) {

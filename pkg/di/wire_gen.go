@@ -7,15 +7,15 @@
 package di
 
 import (
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/api"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/api/handler"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/api/middleware"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/config"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/driver/db"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/driver/log/adapter"
-	config2 "github.com/thnkrn/go-fiber-clean-arch/pkg/driver/log/config"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/repository"
-	"github.com/thnkrn/go-fiber-clean-arch/pkg/usecase"
+	"github.com/donnyirianto/go-clean/pkg/api"
+	"github.com/donnyirianto/go-clean/pkg/api/handler"
+	"github.com/donnyirianto/go-clean/pkg/api/middleware"
+	"github.com/donnyirianto/go-clean/pkg/config"
+	"github.com/donnyirianto/go-clean/pkg/driver/db"
+	"github.com/donnyirianto/go-clean/pkg/driver/log/adapter"
+	config2 "github.com/donnyirianto/go-clean/pkg/driver/log/config"
+	"github.com/donnyirianto/go-clean/pkg/repository"
+	"github.com/donnyirianto/go-clean/pkg/usecase"
 )
 
 // Injectors from wire.go:

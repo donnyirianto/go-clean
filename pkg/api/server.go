@@ -9,10 +9,10 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 
-	handler "github.com/thnkrn/go-fiber-clean-arch/pkg/api/handler"
-	middleware "github.com/thnkrn/go-fiber-clean-arch/pkg/api/middleware"
-	config "github.com/thnkrn/go-fiber-clean-arch/pkg/config"
-	log "github.com/thnkrn/go-fiber-clean-arch/pkg/driver/log"
+	handler "github.com/donnyirianto/go-clean/pkg/api/handler"
+	middleware "github.com/donnyirianto/go-clean/pkg/api/middleware"
+	config "github.com/donnyirianto/go-clean/pkg/config"
+	log "github.com/donnyirianto/go-clean/pkg/driver/log"
 )
 
 type Middlewares struct {
